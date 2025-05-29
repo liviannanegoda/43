@@ -7,7 +7,7 @@
 3. Реализуйте форму входа для аутентификации пользователей с использованием стандартных средств Spring Security.
 4. Если неаутентифицированный пользователь пытается получить доступ к /private-data, он должен быть перенаправлен на форму входа.
 _
-Подсказка:
+## Подсказка:
 Файл HTML:
 <!DOCTYPE html>
 <html lang="en">
@@ -30,7 +30,8 @@ _
 </form>
 </body>
 </html>
-Подсказка:
+
+## Подсказка:
 1) http.authorizeRequests()
 .antMatchers("/private-data").hasRole("ADMIN")
 .antMatchers("/public-data").authenticated()
@@ -39,6 +40,7 @@ _
 .and()
 .logout()
 .logoutSuccessUrl("/login");
+
 2) auth.inMemoryAuthentication()
 .withUser("user").password("{noop}password").roles("USER")
 .and()
